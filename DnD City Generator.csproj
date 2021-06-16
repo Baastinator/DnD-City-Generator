@@ -6,4 +6,24 @@
     <RootNamespace>DnD_City_Generator</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="CityNames.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="CityNames.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Cities.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Names.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Titles.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
