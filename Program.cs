@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace DnD_City_Generator
 {
@@ -6,29 +7,36 @@ namespace DnD_City_Generator
     {
         static void Main(string[] args)
         {
+            City city = new City(City.GetName());
 
-            int[] test = { 2, 4, 6, 3, 8, 3, 5, 7, 111};
-            Console.WriteLine(Smallest(test));
+            Console.WriteLine(city.mayor.GetDisplayString());
+
             Console.ReadLine();
         }
 
         public static int Largest(int[] input)
         {
+            int max = input.Max();
             int index = 0;
-            int value = 0;
             for (int i = 0; i < input.Length; i++)
             {
-                if (input[i] > value) { value = input[i]; index = i; }
+                if (max == input[i])
+                {
+                    index = i;
+                }
             }
             return index;
         }
         public static int Smallest(int[] input)
         {
-            int index = input.Length;
-            int value = Largest(input);
+            int min = input.Min();
+            int index = 0;
             for (int i = 0; i < input.Length; i++)
             {
-                if (input[i] < value) { value = input[i]; index = i; }
+                if (min == input[i])
+                {
+                    index = i;
+                }
             }
             return index;
         }
