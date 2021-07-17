@@ -4,6 +4,25 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>DnD_City_Generator</RootNamespace>
+    <Authors>Baastiplays</Authors>
+    <Product />
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="CityNames.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="CityNames.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Cities.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Names.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>
