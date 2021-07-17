@@ -17,21 +17,22 @@ namespace DnD_City_Generator
             this.name = name;
             this.age = age;
         }
-
-        public string GetDisplayString()
+        
+        public int DisplayStringTitleLength() { return Math.Max(name.Length + title.Length + 22, 20); }
+        public string GetDisplayString(int MinSize)
         {
             string dis = "";
 
-            dis += "\n"; for (int i = 0; i < Math.Max(name.Length + title.Length + 22, 30); i++) { dis += "-"; }
-            dis += "\nName: " + name + " " + title + ", " + age + " years old";
-            dis += "\n"; for (int i = 0; i < Math.Max(name.Length + title.Length + 22, 30); i++) { dis += "-"; }
+            dis += "\n"; for (int i = 0; i < Math.Max(name.Length + title.Length + 22, Math.Max(30, MinSize)); i++) { dis += "-"; }
+            dis += "\nMayor: " + name + " " + title + ", " + age + " years old";
+            dis += "\n"; for (int i = 0; i < Math.Max(name.Length + title.Length + 22, Math.Max(30, MinSize)); i++) { dis += "-"; }
             dis += "\nAmbition:  " + ambition;
             dis += "\nHostility: " + hostility;
             dis += "\nScience:   " + science;
             dis += "\nArtisan:   " + artisan;
             dis += "\nJustice:   " + justice;
             dis += "\nHedonism:  " + hedonism;
-            dis += "\nWisdom:    " + wisdom ;
+            dis += "\nWisdom:    " + wisdom;
             dis += "\n---------------";
             dis += "\n";
             dis += "\n";
@@ -72,7 +73,7 @@ namespace DnD_City_Generator
                 switch (smallest)
                 {
                     case 0:
-                        title = "Satisfied";
+                        title = "Dormant";
                         break;
                     case 1:
                         title = "Peaceful";
